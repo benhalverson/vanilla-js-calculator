@@ -34,6 +34,16 @@ function main() {
           if (!display.innerText.includes(".")) {
             display.innerText += value;
           }
+        case "%":
+          const currentText = display.innerText;
+          const numberMatch = currentText.match(/\d+\.?\d*/g);
+          if(numberMatch){
+            const number = numberMatch[0];
+            const index = currentText.indexOf(number);
+            const percentage = parseFloat(number) / 100;
+            display.innerHTML = currentText.slice(0, index) + percentage; 
+          }
+          break;
         default:
           console.log('display.innerText', display.innerText);
           if (display.innerText === "Error") {

@@ -12,7 +12,7 @@ function main() {
         case "C":
           display.innerHTML = "";
           break;
-        case "CE":
+        case "DEL":
           display.innerHTML = display.innerHTML.slice(0, -1);
           break;
         case "=":

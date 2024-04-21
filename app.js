@@ -34,14 +34,26 @@ function main() {
           if (!display.innerText.includes(".")) {
             display.innerText += value;
           }
+          break;
         case "%":
           const currentText = display.innerText;
           const numberMatch = currentText.match(/\d+\.?\d*/g);
-          if(numberMatch){
+          if (numberMatch) {
             const number = numberMatch[0];
             const index = currentText.indexOf(number);
             const percentage = parseFloat(number) / 100;
-            display.innerHTML = currentText.slice(0, index) + percentage; 
+            display.innerHTML = currentText.slice(0, index) + percentage;
+          }
+          break;
+
+        case '+/-':
+          const currentTextToggle = display.innerText;
+          const numberMatchToggle = currentTextToggle.match(/\d+\.?\d*/g);
+          if(numberMatchToggle) {
+            const numberToggle = numberMatchToggle[0];
+            const indexToggle = currentTextToggle.indexOf(numberToggle);
+            const toggle = parseFloat(numberToggle) * -1;
+            display.innerHTML = currentTextToggle.slice(0, indexToggle) + toggle;
           }
           break;
         default:

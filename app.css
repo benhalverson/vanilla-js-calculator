@@ -9,10 +9,11 @@ body {
 }
 
 .calculator {
-  background: #000;
+  background: #1c1c1c;
   border-radius: 5px;
   padding: 10px;
   display: grid;
+  grid-gap: 5px;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -22,22 +23,25 @@ body {
   color: white;
   padding: 10px;
   text-align: right;
-  border-radius: 10px;
+  border-radius: 0px;
   cursor: pointer;
+  font-size: 2rem;
+  border: 2px solid #333;
 }
 
 .btn {
-  background: #555;
+  background: #2d2d2d;
   color: white;
   border: none;
   padding: 20px;
   font-size: 1.5rem;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
 .btn:active {
-  background: #888;
+  background: #4d4d4d;
 }
 
 .operation {
@@ -54,5 +58,14 @@ body {
 }
 
 .clear, .backspace, .percent, .operation, .equals {
+  background: #131313;
   color: white;
+}
+
+.btn:not(.operation):not(.equals):hover {
+  background: #404040;
+}
+
+.equals:hover {
+  background: #0066ff;
 }
